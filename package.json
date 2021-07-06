@@ -1,0 +1,23 @@
+{
+  "name": "type-express",
+  "version": "0.1.0",
+  "description": "typescript express sample app",
+  "main": "src/index.ts",
+  "author": "ayushbasak",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev" : "nodemon src/index.ts",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^16.0.0",
+    "nodemon": "^2.0.9",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5"
+  }
+}
