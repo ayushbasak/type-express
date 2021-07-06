@@ -8,8 +8,8 @@ sample express application using Typescript
 
 ####  Commands
 
-`$ yarn dev` for development server
-`$ yarn start` for production server
-`$ yarn build` create a javascript build
+* `$ yarn dev` for development server  
+* `$ yarn start` for production server  
+* `$ yarn build` create a javascript build  
 
 [MIT](LICENSE)
