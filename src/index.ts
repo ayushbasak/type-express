@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 import express, {Application, Request, Response} from 'express'
-import { createConnection } from  'typeorm'
+import { createConnection , Between} from  'typeorm'
 import { Person } from './entity/Person'
 
 createConnection().then(connection => {
@@ -27,6 +27,19 @@ createConnection().then(connection => {
     app.get('/person', async (req: Request, res: Response)=>{
         const persons = await personRepository.find()
         return res.send(persons)
+    })
+
+    app.get('/q/:range', async (req: Request, res: Response)=>{
+        const range = req.params.range.split("&");
+        if(range.length !== 2)
+            return res.send('Invalid Request')
+        const lower_bound : number = Number(range[0]) || 18;
+        const upper_bound : number = Number(range[1]) || 120;
+
+        const result =  await personRepository.find({
+                                age: Between(lower_bound, upper_bound)
+                        })
+        res.send(result)
     })
 
 

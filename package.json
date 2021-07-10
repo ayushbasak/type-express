@@ -6,9 +6,10 @@
   "author": "ayushbasak",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/src/index.js",
-    "dev": "ts-node src/index.ts",
-    "build": "tsc -p ."
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p .",
+    "deploy": "node dist/src/index.js"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
