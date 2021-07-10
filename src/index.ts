@@ -29,7 +29,7 @@ createConnection().then(connection => {
         return res.send(persons)
     })
 
-    app.get('/q/:range', async (req: Request, res: Response)=>{
+    app.get('/query/:range', async (req: Request, res: Response)=>{
         const range = req.params.range.split("&");
         if(range.length !== 2)
             return res.send('Invalid Request')
